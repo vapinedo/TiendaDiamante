@@ -1,0 +1,29 @@
+name: Despliegue a produccion
+
+
+# el flujo se ejecuta cuando subimos cambios a main ( actualmente solo mediante pull request )
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN_GH_PAGES }}
+          BRANCH: gh-pages # Cambia esto al nombre de la rama en la que deseas desplegar tu aplicación (por ejemplo, main)
+          FOLDER: build # Cambia esto al directorio donde se encuentra tu aplicación compilada
