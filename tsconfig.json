@@ -23,6 +23,7 @@
     "baseUrl": "./src",
     "paths": {
       "@app/*": ["*"],
+      "@core/*": ["core/*"],
       "@mocks/*": ["mocks/*"],
       "@hooks/*": ["hooks/*"],
       "@stores/*": ["stores/*"],
@@ -32,7 +33,7 @@
       "@features/*": ["features/*"],
       "@services/*": ["services/*"],
       "@components/*": ["components/*"],
-      "@firebaseConfig": ["firebaseConfig"],
+      "@firebaseConfig": ["firebaseConfig"]
     }
   },
   "include": ["src"],
