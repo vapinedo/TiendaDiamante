@@ -5,11 +5,12 @@ export default defineConfig({
   base: '/React-UribiaOnlineBackend/',
   plugins: [react()],
   build: {
-    outDir: 'build',
+    outDir: 'build'
   },
   resolve: {
     alias: {
       '@app': '/src',
+      '@core': '/src/core',
       '@mocks': '/src/mocks',
       '@hooks': '/src/hooks',
       '@stores': '/src/stores',
@@ -19,7 +20,7 @@ export default defineConfig({
       '@features': '/src/features',
       '@services': '/src/services',
       '@components': '/src/components',
-      '@firebaseConfig': '/src/firebaseConfig',
-    },
-  },
+      '@firebaseConfig': '/src/firebaseConfig'
+    }
+  }
 });
